@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:12:58 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:55:09 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 23:23:42 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	main(void)
 			ft_add(&phonebook);
 		else if (input == "SEARCH")
 			ft_search(&phonebook);
+		else
+			ft_not_found();
 		std::cin.clear();
+		std::cin.ignore();
 	}
 	return (0);
 }
