@@ -6,12 +6,25 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:24:05 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/05 22:08:14 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 21:40:25 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Contact.hpp"
+
+// default constructor
+Contact::Contact(void)
+{
+	this->id = 0;
+	this->firstName = "";
+	this->lastName = "";
+	this->nickname = "";
+	this->phone = "";
+	this->darkestSecret = "";
+	std::cout << "Contact created" << std::endl;
+	return ;
+}
 
 Contact::Contact(
 	std::string firstName,

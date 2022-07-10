@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:10:16 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/05 14:29:59 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 21:39:56 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class Contact {
 			std::string phone,
 			std::string darkestSecret
 		);
+		Contact(void);
 		~Contact(void);
 		
 };
