@@ -6,12 +6,11 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:24:05 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 21:53:06 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:19:33 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
+#include "main.hpp"
 
 // default constructor
 Contact::Contact(void)
@@ -43,7 +42,7 @@ void Contact::setContact(
 	this->phone = phone;
 	this->darkestSecret = darkestSecret;
 
-	std::cout << "Contact '" << firstName << "' created" << std::endl;
+	// std::cout << "Contact '" << firstName << "' created" << std::endl;
 	return ;
 }
 

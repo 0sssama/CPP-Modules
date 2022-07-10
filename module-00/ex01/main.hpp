@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 14:12:58 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:16:48 by olabrahm         ###   ########.fr       */
+/*   Created: 2022/07/10 22:14:49 by olabrahm          #+#    #+#             */
+/*   Updated: 2022/07/10 22:15:49 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int	main(void)
-{
-	PhoneBook	phonebook;
-	std::string	input;
-	
-	while (69) // cuz why not?
-	{
-		std::cout << "CMD >> ";
-		if (!getline(std::cin, input))
-			return ((std::cout << std::endl), 1);
-		if (input == "ADD")
-			ft_add(&phonebook);
-		else if (input == "EXIT")
-			return (ft_exit(), 0);
-		else
-			ft_not_found();
-	}
-	return (0);
-}
+# include <iostream>
+# include "Contact.hpp"
+# include "PhoneBook.hpp"
+
+// commands
+void	ft_add(PhoneBook *phonebook);
+void	ft_exit(void);
+void	ft_not_found(void);
+
+#endif

@@ -6,13 +6,11 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:09:12 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 21:52:46 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:23:36 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "main.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -21,7 +19,7 @@ PhoneBook::PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::addContact(
+int	PhoneBook::addContact(
 	std::string firstName,
 	std::string lastName,
 	std::string nickname,
@@ -29,11 +27,6 @@ void	PhoneBook::addContact(
 	std::string darkestSecret
 )
 {
-	if (this->nbContacts >= 8)
-	{
-		std::cout << "PhoneBook is full" << std::endl;
-		return ;
-	}
 	this->contacts[this->nbContacts % 8].setContact(
 		firstName,
 		lastName,
@@ -41,8 +34,8 @@ void	PhoneBook::addContact(
 		phone,
 		darkestSecret
 	);
-	this->nbContacts++;
-	return ;
+	this->nbContacts = this->nbContacts == 8 ? 8 : this->nbContacts + 1;
+	return (1);
 }
 
 void	PhoneBook::printContacts(void)
