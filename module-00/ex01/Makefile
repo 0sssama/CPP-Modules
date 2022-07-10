@@ -6,15 +6,15 @@
 #    By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/05 16:55:37 by olabrahm          #+#    #+#              #
-#    Updated: 2022/07/05 16:57:31 by olabrahm         ###   ########.fr        #
+#    Updated: 2022/07/10 21:33:41 by olabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRC = main.cpp Contact.cpp Phonebook.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
-INCLUDES = -I Contact.hpp -I Phonebook.hpp
+INCLUDES = Contact.hpp PhoneBook.hpp
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -22,8 +22,8 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	c++ $(FLAGS) $(SRC) $(INCLUDES) -o $(NAME)
+$(NAME): $(SRC) $(INCLUDES)
+	c++ $(FLAGS) $(SRC) -o $(NAME)
 
 clean: # no obj files to clean
 

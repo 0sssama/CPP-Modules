@@ -6,12 +6,13 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:09:12 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/05 16:58:36 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 21:35:19 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 PhoneBook::PhoneBook(void)
 {
