@@ -6,11 +6,22 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:13:46 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:22:12 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:34:51 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+
+int	ft_get_input(std::string *input, std::string name)
+{
+	std::cout << "Enter " << name << ": ";
+	if (!getline(std::cin, *input) || input->empty())
+	{
+		std::cout << "Field cannot be empty or null." << std::endl;
+		return (0);
+	}
+	return (1);
+}
 
 void	ft_add(PhoneBook *phonebook)
 {
@@ -21,21 +32,16 @@ void	ft_add(PhoneBook *phonebook)
 	std::string darkestSecret;
 	int			success;
 
-	std::cout << "Enter first name: ";
-	if (!getline(std::cin, firstName))
-		return ;
-	std::cout << "Enter last name: ";
-	if (!getline(std::cin, lastName))
-		return ;
-	std::cout << "Enter nickname: ";
-	if (!getline(std::cin, nickname))
-		return ;
-	std::cout << "Enter phone: ";
-	if (!getline(std::cin, phone))
-		return ;
-	std::cout << "Enter darkest secret: ";
-	if (!getline(std::cin, darkestSecret))
-		return ;
+	success = ft_get_input(&firstName, "First Name");
+	if (!success) return ;
+	success = ft_get_input(&lastName, "Last Name");
+	if (!success) return ;
+	success = ft_get_input(&nickname, "Nickname");
+	if (!success) return ;
+	success = ft_get_input(&phone, "Phone");
+	if (!success) return ;
+	success = ft_get_input(&darkestSecret, "Darkest Secret");
+	if (!success) return ;
 	success = phonebook->addContact(firstName, lastName, nickname, phone, darkestSecret);
 	if (success)
 		std::cout << firstName << " was added successfully to your contact list." << std::endl;
