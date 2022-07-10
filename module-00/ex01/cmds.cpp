@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:13:46 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:34:51 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:48:27 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ void	ft_add(PhoneBook *phonebook)
 	success = phonebook->addContact(firstName, lastName, nickname, phone, darkestSecret);
 	if (success)
 		std::cout << firstName << " was added successfully to your contact list." << std::endl;
+}
+
+void	ft_search(PhoneBook *phonebook)
+{
+	unsigned int	index;
+
+	phonebook->printContacts();
+	std::cout << "What index are you looking for ? ";
+	if (!(std::cin >> index)) return ;
+	if (index >= phonebook->getNbContacts())
+	{
+		std::cout << "Index out of range." << std::endl;
+		return ;
+	}
+	phonebook->printContact(index);
 }
 
 void	ft_exit(void)
