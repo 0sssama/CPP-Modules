@@ -6,11 +6,13 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:09:12 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:48:41 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 23:51:02 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <stdlib.h>
+#include <stdio.h>
 
 PhoneBook::PhoneBook(void)
 {
@@ -38,17 +40,42 @@ int	PhoneBook::addContact(
 	return (1);
 }
 
+void	PhoneBook::printColumn(std::string column[4])
+{
+	std::cout << std::string(45, '-') << std::endl;
+	std::cout << "|";
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << std::setw(10) << std::right << column[i];
+		std::cout << "|";
+	}
+	std::cout << std::endl;
+	return ;
+}
+
 void	PhoneBook::printContacts(void)
 {
+	std::string	index_string;
+	std::string	column[4] = {
+		"Index",
+		"First Name",
+		"Last Name",
+		"Nickname"
+	};
+
+	this->printColumn(column);
 	for (unsigned int i = 0; i < this->nbContacts; i++)
 	{
-		std::cout << std::endl << "Contact " << i + 1 << ":" << std::endl;
-		std::cout << "	First name: " << this->contacts[i].getFirstName() << std::endl;
-		std::cout << "	Last name: " << this->contacts[i].getLastName() << std::endl;
-		std::cout << "	Nickname: " << this->contacts[i].getNickname() << std::endl;
-		std::cout << "	Phone: " << this->contacts[i].getPhone() << std::endl;
-		std::cout << "	Darkest secret: " << this->contacts[i].getDarkestSecret() << std::endl;
+		std::string column[4] = {
+			"0",
+			this->contacts[i].getFirstName(),
+			this->contacts[i].getLastName(),
+			this->contacts[i].getNickname()
+		};
+		this->printColumn(column);	
 	}
+	if (this->nbContacts > 0)
+		std::cout << std::string(45, '-') << std::endl;
 	return ;
 }
 

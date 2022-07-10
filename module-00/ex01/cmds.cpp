@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:13:46 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 22:48:27 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 23:47:20 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_search(PhoneBook *phonebook)
 	unsigned int	index;
 
 	phonebook->printContacts();
-	std::cout << "What index are you looking for ? ";
+	std::cout << std::endl << "What index are you looking for ? ";
 	if (!(std::cin >> index)) return ;
 	if (index >= phonebook->getNbContacts())
 	{
