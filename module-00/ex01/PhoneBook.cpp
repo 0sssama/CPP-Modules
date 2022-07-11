@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:09:12 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 23:51:02 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/11 12:06:11 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 PhoneBook::PhoneBook(void)
 {
 	this->nbContacts = 0;
+	this->current_index = 0;
 	// std::cout << "PhoneBook created" << std::endl;
 	return ;
 }
@@ -29,13 +30,14 @@ int	PhoneBook::addContact(
 	std::string darkestSecret
 )
 {
-	this->contacts[this->nbContacts % 8].setContact(
+	this->contacts[this->current_index].setContact(
 		firstName,
 		lastName,
 		nickname,
 		phone,
 		darkestSecret
 	);
+	this->current_index = (this->current_index + 1) % 8;
 	this->nbContacts = this->nbContacts == 8 ? 8 : this->nbContacts + 1;
 	return (1);
 }
@@ -67,7 +69,7 @@ void	PhoneBook::printContacts(void)
 	for (unsigned int i = 0; i < this->nbContacts; i++)
 	{
 		std::string column[4] = {
-			"0",
+			to_string(i),
 			this->contacts[i].getFirstName(),
 			this->contacts[i].getLastName(),
 			this->contacts[i].getNickname()

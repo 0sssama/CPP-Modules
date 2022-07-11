@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:06:40 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/10 23:28:41 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/11 12:00:28 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PhoneBook {
 		// member attributes
 		Contact			contacts[8];
 		unsigned int	nbContacts;
+		unsigned int	current_index;
 
 		// private member functions
 		void			printColumn(std::string columns[4]);
