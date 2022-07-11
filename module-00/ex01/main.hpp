@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:14:49 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/11 12:05:12 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/11 12:38:55 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <sstream>
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
 
@@ -25,6 +26,6 @@ void		ft_exit(void);
 void		ft_not_found(void);
 
 // utils
-std::string	to_string(int n);
+std::string	to_string(unsigned int n);
 
 #endif
