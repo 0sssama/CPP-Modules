@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:38:48 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/18 14:39:17 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/18 14:59:14 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	main(void)
 {
-	std::cout << "hello world" << std::endl;
+	Zombie	*hmed = newZombie("Hmed");
+
+	hmed->announce();
 	return 0;
 }
