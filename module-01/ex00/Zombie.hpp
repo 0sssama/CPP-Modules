@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:40:06 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/18 14:58:14 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/19 07:08:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Zombie
 {
 
 	private:
-		std::string				_name;
+		std::string				name;
 	
 	public:
 		Zombie(std::string name);
