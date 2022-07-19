@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 07:13:24 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/19 07:14:52 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/19 07:28:59 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,19 @@ class Zombie
 {
 
 	private:
-		std::string				name;
+		std::string		name;
 	
 	public:
 	
 		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
 
 
-		void					announce(void);
-		std::string				getName(void);
+		void		announce(void);
+
+		std::string	getName(void);
+		void		setName(std::string name);
 
 };
 
