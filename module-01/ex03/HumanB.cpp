@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 08:29:29 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/19 08:40:30 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/20 06:47:54 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(std::string name)
 {
 	this->name = name;
+	this->weapon = NULL;
 	std::cout << "HumanB created (name: " << name << ")" << std::endl;
 }
 
@@ -38,12 +39,7 @@ void	HumanB::setName(std::string name)
 	this->name = name;
 }
 
-Weapon	&HumanB::getWeapon(void)
-{
-	return this->weapon;
-}
-
 void	HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = weapon;
+	this->weapon = &weapon;
 }

@@ -6,16 +6,14 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 08:21:12 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/19 08:26:58 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/20 06:44:16 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon)
+HumanA::HumanA(std::string name, Weapon &weapon): name(name), weapon(weapon)
 {
-	this->weapon = weapon;
-	this->name = name;
 	std::cout << "HumanA created (name: " << name << ", weapon" << weapon.getType() << ")" << std::endl;
 }
 
