@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 07:04:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/20 07:48:24 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/20 07:50:23 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ void	add_to_file(std::string &filename, std::string &content)
 
 void	create_replace(std::string &filename, std::string &substring, std::string &newstring)
 {
-	(void) substring;
-	(void) newstring;
-	
 	std::string	content = filecontent(filename);
+
 	content = replace_substr(content, substring, newstring);
 	add_to_file(filename, content);
 	std::cout << "Success." << std::endl;
