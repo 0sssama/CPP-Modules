@@ -6,7 +6,7 @@
 #    By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 09:09:34 by olabrahm          #+#    #+#              #
-#    Updated: 2022/07/20 09:09:55 by olabrahm         ###   ########.fr        #
+#    Updated: 2022/07/20 09:28:10 by olabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp Harl.cpp
 
 HEADER = Harl.hpp
 
-INCLUDES = -L $(HEADER)
+INCLUDES = -I $(HEADER)
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
