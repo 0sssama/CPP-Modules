@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:10:16 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/05 14:29:59 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 21:48:35 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ class Contact {
 	private:
 		// member attributes
 		unsigned int	id;
-		std::string firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phone;
-		std::string darkestSecret;
+		std::string 	firstName;
+		std::string 	lastName;
+		std::string 	nickname;
+		std::string 	phone;
+		std::string 	darkestSecret;
 	
 	public:
 
@@ -32,15 +32,16 @@ class Contact {
 		std::string	getNickname(void);
 		std::string	getPhone(void);
 		std::string	getDarkestSecret(void);
-
-		// constructor and destructor
-		Contact(
+		void		setContact(
 			std::string firstName,
 			std::string lastName,
 			std::string nickname,
 			std::string phone,
 			std::string darkestSecret
 		);
+
+		// constructor and destructor
+		Contact(void);
 		~Contact(void);
 		
 };

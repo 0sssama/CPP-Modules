@@ -6,14 +6,26 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:24:05 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/05 22:08:14 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:19:33 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
+#include "main.hpp"
 
-Contact::Contact(
+// default constructor
+Contact::Contact(void)
+{
+	this->id = 0;
+	this->firstName = "";
+	this->lastName = "";
+	this->nickname = "";
+	this->phone = "";
+	this->darkestSecret = "";
+	// std::cout << "Default Contact created" << std::endl;
+	return ;
+}
+
+void Contact::setContact(
 	std::string firstName,
 	std::string lastName,
 	std::string nickname,
@@ -30,7 +42,7 @@ Contact::Contact(
 	this->phone = phone;
 	this->darkestSecret = darkestSecret;
 
-	std::cout << "Contact '" << firstName << "' created" << std::endl;
+	// std::cout << "Contact '" << firstName << "' created" << std::endl;
 	return ;
 }
 
@@ -61,6 +73,6 @@ std::string	Contact::getDarkestSecret(void)
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact '" << this->firstName << "' destroyed" << std::endl;
+	// std::cout << "Contact '" << this->firstName << "' destroyed" << std::endl;
 	return ;
 }

@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 14:12:58 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/11 12:39:28 by olabrahm         ###   ########.fr       */
+/*   Created: 2022/07/11 12:04:16 by olabrahm          #+#    #+#             */
+/*   Updated: 2022/07/11 12:27:50 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-int	main(void)
+std::string	to_string(unsigned int n)
 {
-	PhoneBook	phonebook;
-	std::string	input;
+	std::string			input;
+	std::stringstream	output;
 	
-	while (69) // cuz why not?
-	{
-		std::cout << "CMD >> ";
-		if (!getline(std::cin, input) || input == "EXIT")
-			return (ft_exit(), 0);
-		else if (input == "ADD")
-			ft_add(&phonebook);
-		else if (input == "SEARCH")
-		{
-			ft_search(&phonebook);
-			std::cin.clear();
-			std::cin.ignore();
-		}
-		else
-			ft_not_found();
-	}
-	return (0);
+	output << n;
+	output >> input;
+	return (input);
 }
