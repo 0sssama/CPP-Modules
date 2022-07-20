@@ -6,19 +6,11 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 07:04:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/20 07:31:07 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/20 07:48:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
-
-std::string	replace(std::string &text, std::string &substring, std::string &newstring)
-{
-	(void) substring;
-	(void) newstring;
-	
-	return (text);
-}
 
 std::string	filecontent(std::string &filename)
 {
@@ -26,18 +18,18 @@ std::string	filecontent(std::string &filename)
 	std::string		content;
 	std::string		line;
 	
-	if (file.is_open())
-	{
-		while (file)
-		{
-			std::getline(file, line);
-			content += line + "\n";
-		}
-		file.close();
-	} else {
+	if (!file.is_open()) {
 		std::cout << "Error: can't open file " << filename << std::endl;
 		exit(1);
 	}
+
+	while (getline(file, line))
+	{
+		content += line + "\n";
+		getline(file, line);
+	}
+	file.close();
+
 	return (content);
 }
 
@@ -59,16 +51,28 @@ std::string	replace_substr(std::string &content, std::string &substring, std::st
 	return (result);
 }
 
+void	add_to_file(std::string &filename, std::string &content)
+{
+	std::string		new_filename = filename;
+	new_filename += ".replace";
+
+	std::ofstream	file(new_filename.c_str());
+	
+	if (!file.is_open()) {
+		std::cout << "Error: can't open file " << filename << std::endl;
+		exit(1);
+	}
+	file << content;
+	file.close();
+}
+
 void	create_replace(std::string &filename, std::string &substring, std::string &newstring)
 {
 	(void) substring;
 	(void) newstring;
 	
 	std::string	content = filecontent(filename);
-
-	std::cout << "File content: " << content << std::endl;
-
 	content = replace_substr(content, substring, newstring);
-
-	std::cout << "After replacement: " << content << std::endl;
+	add_to_file(filename, content);
+	std::cout << "Success." << std::endl;
 }
