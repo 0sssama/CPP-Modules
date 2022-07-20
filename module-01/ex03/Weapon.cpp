@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 08:01:52 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/07/19 08:34:58 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/07/20 06:52:09 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Weapon::Weapon(void)
 {
-	this->type = nullptr;
+	this->type = "";
 	std::cout << "Weapon created (type: none)" << std::endl;
 }
 
