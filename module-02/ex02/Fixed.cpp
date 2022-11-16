@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:27 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/16 21:35:27 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/16 22:09:11 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,5 +148,73 @@ Fixed	&operator/(const Fixed &fixed1, const Fixed &fixed2)
 	Fixed	output;
 
 	output.setRawBits(fixed1.getRawBits() / fixed2.getRawBits());
+	return (output);
+}
+
+Fixed	&Fixed::min(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1 > fixed2)
+		return (fixed2);
+	return (fixed1);
+}
+
+Fixed	&Fixed::min(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	if (fixed1 > fixed2)
+		output = fixed2;
+	else
+		output = fixed1;
+	return (output);
+}
+
+Fixed	&Fixed::max(Fixed &fixed1, Fixed &fixed2)
+{
+	if (fixed1 < fixed2)
+		return (fixed2);
+	return (fixed1);
+}
+
+Fixed	&Fixed::max(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	if (fixed1 < fixed2)
+		output = fixed2;
+	else
+		output = fixed1;
+	return (output);
+}
+
+// like calling ++a
+Fixed	&Fixed::operator++()
+{
+	this->_value++;
+	return (*this);
+}
+
+// like calling --a
+Fixed	&Fixed::operator--()
+{
+	this->_value--;
+	return (*this);
+}
+
+// like calling a++
+Fixed	&Fixed::operator++(int)
+{
+	Fixed	output(*this);
+
+	this->_value++;
+	return (output);
+}
+
+// like calling a++
+Fixed	&Fixed::operator--(int)
+{
+	Fixed	output(*this);
+
+	this->_value--;
 	return (output);
 }

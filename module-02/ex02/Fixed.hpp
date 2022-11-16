@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:32 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/16 21:31:16 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/16 22:06:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,28 @@ class Fixed
 		Fixed(const Fixed &fixed);
 		~Fixed(void);
 
+		// constructors with values
+		Fixed(int const value);
+		Fixed(float const value);
+
 		// copy assignment operator
 		Fixed	&operator=(const Fixed &fixed);
 
+		// min and max public functions
+		Fixed	&min(Fixed &fixed1, Fixed &fixed2);
+		Fixed	&min(const Fixed &fixed1, const Fixed &fixed2);
+		Fixed	&max(Fixed &fixed1, Fixed &fixed2);
+		Fixed	&max(const Fixed &fixed1, const Fixed &fixed2);
 		
-		Fixed(int const value);
-		Fixed(float const value);
-		
+		// pre-decrement and pre-increment operators
+		Fixed	&operator++();
+		Fixed	&operator--();
+
+		// post-decrement and post-increment operators
+		Fixed	&operator++(int);
+		Fixed	&operator--(int);
+
+		// getters and setters		
 		int 	getRawBits(void)	const;
 		void	setRawBits(int const raw);
 
