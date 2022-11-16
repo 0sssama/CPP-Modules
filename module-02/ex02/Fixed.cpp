@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:27 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/16 21:20:29 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:35:27 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ float	Fixed::toFloat(void) const
 	float	output;
 
 	output = (double) this->_value / (double) (1 << this->_bits);
-	return output;
+	return (output);
 }
 
 int		Fixed::toInt(void)		const
@@ -86,5 +86,67 @@ int		Fixed::toInt(void)		const
 	int	output;
 
 	output = this->_value >> this->_bits;
-	return output;
+	return (output);
+}
+
+int	operator>(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() > fixed2.getRawBits());
+}
+
+int	operator<(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() < fixed2.getRawBits());
+}
+
+int	operator>=(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() >= fixed2.getRawBits());
+}
+
+int	operator<=(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() <= fixed2.getRawBits());
+}
+
+int	operator==(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() == fixed2.getRawBits());
+}
+
+int	operator!=(const Fixed &fixed1, const Fixed &fixed2)
+{
+	return (fixed1.getRawBits() != fixed2.getRawBits());
+}
+
+Fixed	&operator+(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	output.setRawBits(fixed1.getRawBits() + fixed2.getRawBits());
+	return (output);
+}
+
+Fixed	&operator-(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	output.setRawBits(fixed1.getRawBits() - fixed2.getRawBits());
+	return (output);
+}
+
+Fixed	&operator*(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	output.setRawBits(fixed1.getRawBits() * fixed2.getRawBits());
+	return (output);
+}
+
+Fixed	&operator/(const Fixed &fixed1, const Fixed &fixed2)
+{
+	Fixed	output;
+
+	output.setRawBits(fixed1.getRawBits() / fixed2.getRawBits());
+	return (output);
 }

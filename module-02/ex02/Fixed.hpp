@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:32 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/16 21:20:33 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:31:16 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class Fixed
 		Fixed(const Fixed &fixed);
 		~Fixed(void);
 
+		// copy assignment operator
 		Fixed	&operator=(const Fixed &fixed);
+
 		
 		Fixed(int const value);
 		Fixed(float const value);
@@ -40,5 +42,19 @@ class Fixed
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
+
+// the 6 comparison operators
+int		operator>(const Fixed &fixed1, const Fixed &fixed2);
+int		operator<(const Fixed &fixed1, const Fixed &fixed2);
+int		operator<=(const Fixed &fixed1, const Fixed &fixed2);
+int		operator>=(const Fixed &fixed1, const Fixed &fixed2);
+int		operator==(const Fixed &fixed1, const Fixed &fixed2);
+int		operator!=(const Fixed &fixed1, const Fixed &fixed2);
+
+// the arithmetic operators
+Fixed	&operator+(const Fixed &fixed1, const Fixed &fixed2);
+Fixed	&operator-(const Fixed &fixed1, const Fixed &fixed2);
+Fixed	&operator*(const Fixed &fixed1, const Fixed &fixed2);
+Fixed	&operator/(const Fixed &fixed1, const Fixed &fixed2);
 
 #endif
