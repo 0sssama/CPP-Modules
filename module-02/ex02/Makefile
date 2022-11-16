@@ -1,0 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/16 21:20:44 by olabrahm          #+#    #+#              #
+#    Updated: 2022/11/16 21:20:45 by olabrahm         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = exe
+
+SRC = main.cpp Fixed.cpp
+
+FLAGS = -Wall -Werror -Wextra -std=c++98
+
+RM = rm -rf
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+$(NAME): $(SRC)
+	c++ $(FLAGS) $(SRC) -o $(NAME)
+
+clean: # no obj files to clean
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
