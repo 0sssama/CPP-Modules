@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:27 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/17 12:58:59 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/17 13:08:35 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,34 +115,22 @@ int	operator!=(const Fixed &fixed1, const Fixed &fixed2)
 
 Fixed	operator+(const Fixed &fixed1, const Fixed &fixed2)
 {
-	Fixed	output;
-
-	output.setRawBits(fixed1.getRawBits() + fixed2.getRawBits());
-	return (output);
+	return (Fixed(fixed1.toFloat() + fixed2.toFloat()));
 }
 
 Fixed	operator-(const Fixed &fixed1, const Fixed &fixed2)
 {
-	Fixed	output;
-
-	output.setRawBits(fixed1.getRawBits() - fixed2.getRawBits());
-	return (output);
+	return (Fixed(fixed1.toFloat() - fixed2.toFloat()));
 }
 
 Fixed	operator*(const Fixed &fixed1, const Fixed &fixed2)
 {
-	Fixed	output;
-
-	output.setRawBits(fixed1.getRawBits() * fixed2.getRawBits());
-	return (output);
+	return (Fixed(fixed1.toFloat() * fixed2.toFloat()));
 }
 
 Fixed	operator/(const Fixed &fixed1, const Fixed &fixed2)
 {
-	Fixed	output;
-
-	output.setRawBits(fixed1.getRawBits() / fixed2.getRawBits());
-	return (output);
+	return (Fixed(fixed1.toFloat() / fixed2.toFloat()));
 }
 
 Fixed	&Fixed::min(Fixed &fixed1, Fixed &fixed2)

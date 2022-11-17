@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:25:11 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/16 21:17:50 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:36:39 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Fixed::Fixed(float const value)
 	std::cout << "Float constructor called" << std::endl;
 	// we get the float value that we want to store, and turn it into a
 	// fix point, and we store the fixed points.
-	new_value = (int) roundf(value * (1 << this->_bits));
+	new_value = roundf(value * (1 << this->_bits));
 	this->setRawBits(new_value);
 }
 
@@ -47,13 +47,13 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = fixed._value;
+	this->_value = fixed.getRawBits();
 }
 
 Fixed	&Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_value = fixed._value;
+	this->_value = fixed.getRawBits();
 	return (*this);
 }
 
@@ -77,7 +77,7 @@ float	Fixed::toFloat(void) const
 {
 	float	output;
 
-	output = (double) this->_value / (double) (1 << this->_bits);
+	output = (float) this->_value / (float) (1 << this->_bits);
 	return output;
 }
 
