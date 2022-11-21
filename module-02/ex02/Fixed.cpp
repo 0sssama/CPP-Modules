@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:27 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/17 13:08:35 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:26:10 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,54 +83,54 @@ int		Fixed::toInt(void)		const
 	return (output);
 }
 
-int	operator>(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator>(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() > fixed2.getRawBits());
+	return (this->getRawBits() > fixed.getRawBits());
 }
 
-int	operator<(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator<(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() < fixed2.getRawBits());
+	return (this->getRawBits() < fixed.getRawBits());
 }
 
-int	operator>=(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator>=(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() >= fixed2.getRawBits());
+	return (this->getRawBits() >= fixed.getRawBits());
 }
 
-int	operator<=(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator<=(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() <= fixed2.getRawBits());
+	return (this->getRawBits() <= fixed.getRawBits());
 }
 
-int	operator==(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator==(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() == fixed2.getRawBits());
+	return (this->getRawBits() == fixed.getRawBits());
 }
 
-int	operator!=(const Fixed &fixed1, const Fixed &fixed2)
+int	Fixed::operator!=(const Fixed &fixed)	const
 {
-	return (fixed1.getRawBits() != fixed2.getRawBits());
+	return (this->getRawBits() != fixed.getRawBits());
 }
 
-Fixed	operator+(const Fixed &fixed1, const Fixed &fixed2)
+Fixed	Fixed::operator+(const Fixed &fixed)
 {
-	return (Fixed(fixed1.toFloat() + fixed2.toFloat()));
+	return (Fixed(this->toFloat() + fixed.toFloat()));
 }
 
-Fixed	operator-(const Fixed &fixed1, const Fixed &fixed2)
+Fixed	Fixed::operator-(const Fixed &fixed)
 {
-	return (Fixed(fixed1.toFloat() - fixed2.toFloat()));
+	return (Fixed(this->toFloat() - fixed.toFloat()));
 }
 
-Fixed	operator*(const Fixed &fixed1, const Fixed &fixed2)
+Fixed	Fixed::operator*(const Fixed &fixed)
 {
-	return (Fixed(fixed1.toFloat() * fixed2.toFloat()));
+	return (Fixed(this->toFloat() * fixed.toFloat()));
 }
 
-Fixed	operator/(const Fixed &fixed1, const Fixed &fixed2)
+Fixed	Fixed::operator/(const Fixed &fixed)
 {
-	return (Fixed(fixed1.toFloat() / fixed2.toFloat()));
+	return (Fixed(this->toFloat() / fixed.toFloat()));
 }
 
 Fixed	&Fixed::min(Fixed &fixed1, Fixed &fixed2)

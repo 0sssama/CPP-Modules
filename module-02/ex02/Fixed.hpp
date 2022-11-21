@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:20:32 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/17 12:58:25 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:25:49 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,22 @@ class Fixed
 
 		float	toFloat(void)	const;
 		int		toInt(void)		const;
+
+		// the 6 comparison operators
+		int		operator>(const Fixed &fixed)	const;
+		int		operator<(const Fixed &fixed)	const;
+		int		operator<=(const Fixed &fixed)	const;
+		int		operator>=(const Fixed &fixed)	const;
+		int		operator==(const Fixed &fixed)	const;
+		int		operator!=(const Fixed &fixed)	const;
+
+		// the arithmetic operators
+		Fixed	operator+(const Fixed &fixed);
+		Fixed	operator-(const Fixed &fixed);
+		Fixed	operator*(const Fixed &fixed);
+		Fixed	operator/(const Fixed &fixed);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
-
-// the 6 comparison operators
-int		operator>(const Fixed &fixed1, const Fixed &fixed2);
-int		operator<(const Fixed &fixed1, const Fixed &fixed2);
-int		operator<=(const Fixed &fixed1, const Fixed &fixed2);
-int		operator>=(const Fixed &fixed1, const Fixed &fixed2);
-int		operator==(const Fixed &fixed1, const Fixed &fixed2);
-int		operator!=(const Fixed &fixed1, const Fixed &fixed2);
-
-// the arithmetic operators
-Fixed	operator+(const Fixed &fixed1, const Fixed &fixed2);
-Fixed	operator-(const Fixed &fixed1, const Fixed &fixed2);
-Fixed	operator*(const Fixed &fixed1, const Fixed &fixed2);
-Fixed	operator/(const Fixed &fixed1, const Fixed &fixed2);
 
 #endif
