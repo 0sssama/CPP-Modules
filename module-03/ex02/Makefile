@@ -6,15 +6,15 @@
 #    By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/18 13:45:22 by olabrahm          #+#    #+#              #
-#    Updated: 2022/11/22 11:51:45 by olabrahm         ###   ########.fr        #
+#    Updated: 2022/11/22 12:24:41 by olabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = exe
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp
 
-HEADER = ClapTrap.hpp ScavTrap.hpp
+HEADER = ClapTrap.hpp FragTrap.hpp
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
