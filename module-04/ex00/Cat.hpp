@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:42:36 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 14:47:03 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:59:19 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class	Cat: public Animal
     	Cat(const Cat &cat);
     	~Cat();
     	Cat &operator=(const Cat &cat);
+		
+		void	makeSound()	const;
 };
 
 #endif

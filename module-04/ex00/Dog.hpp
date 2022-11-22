@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:46:53 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 14:47:30 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:59:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class	Dog: public Animal
     	Dog(const Dog &dog);
     	~Dog();
     	Dog &operator=(const Dog &dog);
+
+		void	makeSound()	const;
 };
 
 #endif
