@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:28 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 10:25:44 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:52:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,16 @@ ClapTrap::ClapTrap(const ClapTrap &clapTrap)
 	this->_attack = clapTrap.getAttack();
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string const &name, int hit_points, int energy, int attack)
+{
+	std::cout << "Custom constructor called" << std::endl;
+	this->_name = name;
+	this->_hit_points = hit_points;
+	this->_energy = energy;
+	this->_attack = attack;
+}
+
+ClapTrap::ClapTrap(std::string const &name)
 {
 	std::cout << "Name constructor called" << std::endl;
 	this->_name = name;
