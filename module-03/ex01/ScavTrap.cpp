@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:29:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 11:48:54 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:30:45 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ ScavTrap::ScavTrap(): ClapTrap("ScavTrap", 100, 50, 20)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &scavTrap)
+{
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	this->_name = scavTrap.getName();
+	this->_hit_points = scavTrap.getHitPoints();
+	this->_energy = scavTrap.getEnergy();
+	this->_attack = scavTrap.getAttack();
 }
 
 ScavTrap::ScavTrap(std::string const &name): ClapTrap(name, 100, 50, 20)

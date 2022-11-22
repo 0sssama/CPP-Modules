@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 11:01:19 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 11:48:56 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:30:17 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	ScavTrap: public ClapTrap {
 		ScavTrap();
     	ScavTrap(const ScavTrap &scavTrap);
     	~ScavTrap();
-    	ScavTrap &operator=(const ScavTrap &ScavTrap);
+    	ScavTrap &operator=(const ScavTrap &scavTrap);
 		
 		ScavTrap(std::string const &name);
 
