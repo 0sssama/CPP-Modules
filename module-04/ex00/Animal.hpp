@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:33:20 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 14:50:28 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:55:55 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Animal
     	Animal &operator=(const Animal &animal);
 
 		Animal(std::string const &type);
+
+		std::string	const	&getType()	const;
 };
 
 
