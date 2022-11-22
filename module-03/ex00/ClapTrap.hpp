@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:45:37 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/18 15:19:01 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 10:24:47 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
 
 	public:
 
-		// Orthodox Canonical
+		// Orthodox Canonical Form
 		ClapTrap();
     	ClapTrap(const ClapTrap &clapTrap);
     	~ClapTrap();
@@ -36,10 +36,10 @@ class ClapTrap
 		ClapTrap(std::string name);
 
 		// getters and setters
-		std::string const 		&getName()		const;
-		int const				getHitPoints()	const;
-		int const				getEnergy()		const;
-		int const				getAttack()		const;
+		std::string const 	&getName()		const;
+		int					getHitPoints()	const;
+		int					getEnergy()		const;
+		int					getAttack()		const;
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

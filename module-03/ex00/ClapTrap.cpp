@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:28 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/18 15:19:36 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 10:25:44 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap)
 	this->_hit_points = clapTrap.getHitPoints();
 	this->_energy = clapTrap.getEnergy();
 	this->_attack = clapTrap.getAttack();
+	return (*this);
 }
 
 std::string const	&ClapTrap::getName()	const
@@ -58,17 +59,17 @@ std::string const	&ClapTrap::getName()	const
 	return (this->_name);
 }
 
-int const	ClapTrap::getHitPoints()	const
+int	ClapTrap::getHitPoints()	const
 {
 	return (this->_hit_points);
 }
 
-int const	ClapTrap::getEnergy()	const
+int	ClapTrap::getEnergy()	const
 {
 	return (this->_energy);
 }
 
-int const	ClapTrap::getAttack()	const
+int	ClapTrap::getAttack()	const
 {
 	return (this->_attack);
 }
@@ -76,8 +77,11 @@ int const	ClapTrap::getAttack()	const
 void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_energy <= 0)
+	{
 		std::cout << "ClapTrap " << this->getName()
 			<< " cannot attack due to lack of energy." << std::endl;
+		return ;
+	}
 	
 	std::cout << "ClapTrap " << this->getName() << " attacks "
 		<< target << " causing " << this->getAttack()
@@ -89,8 +93,11 @@ void	ClapTrap::attack(const std::string &target)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy <= 0)
+	{
 		std::cout << "ClapTrap " << this->getName() <<
 		" cannot be repaired due to lack of energy." << std::endl;
+		return ;
+	}
 	
 	std::cout << "ClapTrap " << this->getName() << " just got repaired gaining "
 		<< amount << " hit points back." << std::endl;
@@ -114,7 +121,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap "  << this->getName() << " just took " << amount
 			<< " of hit point damage." << std::endl;
 
-	this->_hit_point -= amount;
+	this->_hit_points -= amount;
 
 	if (this->_hit_points <= 0)
 	{
