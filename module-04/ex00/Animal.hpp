@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:33:20 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 14:59:27 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:21:19 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
 
 		std::string	const	&getType()	const;
 
-		void	makeSound()	const;
+		virtual void	makeSound()	const;
 };
 
 

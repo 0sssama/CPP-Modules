@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:35:51 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/11/22 14:59:53 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:20:07 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ std::string	const	&Animal::getType()	const
 
 void	Animal::makeSound()	const
 {
-	std::cout << "What animal am I? What sound am I supposed to make?" << std::endl;
+	std::cout << "SILENCE HERE!" << std::endl;
 }
